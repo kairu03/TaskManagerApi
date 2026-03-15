@@ -7,7 +7,7 @@ import asyncHandler from '../utils/asyncHandler.js';
 
 
 export const userRegister = asyncHandler(async (req, res) => {
-
+  
   // get name, email, password from user inputs or body
   const { name, email, password } = req.body;
 

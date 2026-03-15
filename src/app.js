@@ -11,7 +11,7 @@ import dotenv from "dotenv";
 
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { ApiError } from "./utils/apiError.js";
-import { authLimiter, globalLimiter } from "./config/rateLimiter.js";
+import { authLimiter, globalLimiter } from "./middlewares/rateLimiter.js";
 import { corsOptions } from "./config/cors.js";
 import { logger } from "./config/logger.js";
 import { swaggerSpec } from "./config/swagger.js";

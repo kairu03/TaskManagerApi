@@ -17,7 +17,7 @@ export const protectRoute = asyncHandler(async (req, res, next) => {
     const token = authHeader.split(' ')[1];
     
     //verify token
-    // jwt.verify returns the payload we encoded in the token
+    // jwt.verify returns the payload we encoded in the token 
     let decoded;
     try {
       decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -41,3 +41,4 @@ export const protectRoute = asyncHandler(async (req, res, next) => {
     next();
 });
 
+  

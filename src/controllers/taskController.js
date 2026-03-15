@@ -111,7 +111,7 @@ export const deleteTask = asyncHandler(async (req, res) => {
 
   // fetch task from database by taskId
   const task = await Task.findById(taskId);
-
+  
   if (!task) {
     throw new ApiError('Task not found', 404);
   }
