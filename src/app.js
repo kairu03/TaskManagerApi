@@ -12,7 +12,6 @@ import dotenv from "dotenv";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { ApiError } from "./utils/apiError.js";
 import { authLimiter, globalLimiter } from "./middlewares/rateLimiter.js";
-import { corsOptions } from "./config/cors.js";
 import { logger } from "./config/logger.js";
 import { swaggerSpec } from "./config/swagger.js";
 
@@ -31,11 +30,7 @@ app.disable('x-powered-by');
 // security middleware
 app.use(helmet());
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(cors()); // allow all for backend-only
-} else {
-  app.use(cors(corsOptions)); // dev restrictions
-}
+app.use(cors()); 
 
 // JSON body parser
 app.use(express.json());
